@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AssemblyName>enscan</AssemblyName>
+        <Version>0.0.1</Version>
+        <NeutralLanguage>en</NeutralLanguage>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Product>Exposure Scanner</Product>
+        <Title>CLI Exposure Notification Scanner</Title>
+        <Description>Example of a Bluetooth Low Energy scanner for Exposure Notification Devices</Description>
+        <Authors>HellPie &lt;https://hellpie.dev&gt;</Authors>
+        <Company>HellPie (https://hellpie.dev)</Company>
+        <Copyright>Copyright © 2020 Diego Rossi (https://hellpie.dev)</Copyright>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <PublishTrimmed>true</PublishTrimmed>
+        <PublishReadyToRun>true</PublishReadyToRun>
+        <PublishSingleFile>true</PublishSingleFile>
+        <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolsPackageFormat>snupkg</SymbolsPackageFormat>
+        <IncludeSource>true</IncludeSource>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+        <WarningsAsErrors>true</WarningsAsErrors>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.18362.2005" />
+    </ItemGroup>
+</Project>
